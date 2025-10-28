@@ -3,5 +3,7 @@
 @{
 	Layout = "mainLayout.cshtml";
 }
+<partial name="Partials/Layouts/_PageBanner" model="(IPageBanner)Model" />
+
 
 @Html.GetBlockListHtml(Model.Sections);
