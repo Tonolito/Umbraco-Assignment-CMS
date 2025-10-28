@@ -1,0 +1,91 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ServiceSection)Model.Content;
+    var settings = Model.Settings as ContentModels.ServiceSettings;
+
+    var sectionColor = settings?.ServiceBgColor?.Color ?? "#ffffff";
+}
+
+<section class="our-service" style="background-color:@sectionColor">
+    <div class="container">
+        <div class="our-service-content">
+            <div class="section-title">
+                @if (settings!.ShowServiceLabel)
+                {
+                    <p class="section-name">@content.ServiceLabel</p>
+
+                }
+                <h2>@Html.Raw(content.ServiceTitle)</h2>
+            </div>
+            <div class="box-grid-6x2">
+                <a href="#" class="service-box">
+                    <h5>Risk Management</h5>
+                    <div class="service-box-img-container">
+                        <img src="imgs/Service-img-placeholder.svg" alt="" />
+                    </div>
+                    <p class="service-small-detail">
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non
+                    </p>
+                </a>
+                <a class="service-box">
+                    <h5>Risk Management</h5>
+                    <div class="service-box-img-container">
+                        <img src="imgs/Service-img-placeholder.svg" alt="" />
+                    </div>
+                    <p class="service-small-detail">
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non
+                    </p>
+                </a>
+                <a class="service-box">
+                    <h5>Risk Management</h5>
+                    <div class="service-box-img-container">
+                        <img src="imgs/Service-img-placeholder.svg" alt="" />
+                    </div>
+                    <p class="service-small-detail">
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non
+                    </p>
+                </a>
+                <a class="service-box">
+                    <h5>Risk Management</h5>
+                    <div class="service-box-img-container">
+                        <img src="imgs/Service-img-placeholder.svg" alt="" />
+                    </div>
+                    <p class="service-small-detail">
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non
+                    </p>
+                </a>
+                <a class="service-box">
+                    <h5>Risk Management</h5>
+                    <div class="service-box-img-container">
+                        <img src="imgs/Service-img-placeholder.svg" alt="" />
+                    </div>
+                    <p class="service-small-detail">
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non
+                    </p>
+                </a>
+                <a class="service-box">
+                    <h5>Risk Management</h5>
+                    <div class="service-box-img-container">
+                        <img src="imgs/Service-img-placeholder.svg" alt="" />
+                    </div>
+                    <p class="service-small-detail">
+                        Dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non
+                    </p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
