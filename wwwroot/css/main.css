@@ -113,6 +113,7 @@ p {
 
 a {
     cursor: pointer;
+    text-decoration:none;
 }
 
 header {
@@ -120,12 +121,12 @@ header {
 
 {
     background-color: #4f5955;
-    padding: 0.85rem 0rem;
     .header-content
 
 {
     display: flex;
     justify-content: space-between;
+    align-items:center;
 }
 
 .socials {
@@ -133,10 +134,16 @@ header {
 
 {
     color: white;
+    padding: 1rem 0rem;
 }
 
 .fa-brands:hover {
     color: var(--sub-color3);
+}
+
+a {
+    border-right: 1px solid #656e6a;
+    padding: 0rem 0.5rem;
 }
 
 }
