@@ -1,16 +1,24 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
+
     Layout = null;
 
-    var pageTitle = !string.IsNullOrEmpty(Model.Name) ? $"Onatrix | {Model.Name}" : "Onatrix |";
+    var rootContent = Umbraco.ContentAtRoot();
+
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+
+    var siteName = siteSettings?.SiteName ?? "Onatrix";
+
+    var title = Model.Level == 1 ? $"{siteName}" : $"{siteName} | {Model.Name}";
+
 }
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@pageTitle</title>
+    <title>@title</title>
     <script src="https://kit.fontawesome.com/729e2348c0.js" crossorigin="anonymous"></script>
     <link href="/css/main.css" rel="stylesheet" />
     <link href="/css/service.css" rel="stylesheet" />
@@ -20,6 +28,9 @@
 
 </head>
 <body>
+    <header>
+        <partial name="Partials/Layouts/_TopBar" />
+    </header>
     @RenderBody()
 </body>
 </html>
