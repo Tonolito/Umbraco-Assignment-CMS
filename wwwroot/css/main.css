@@ -220,8 +220,10 @@ nav {
         gap: 4.5rem;
     }
 
-    a
-
+    
+         
+    
+a
 {
     font-size: 16px;
     font-weight: bold;
@@ -233,7 +235,11 @@ a:hover {
     color: var(--sub-color3);
 }
 
+
+.current {
+    color: var(--sub-color3);
 }
+
 
 footer {
     background-color: black;
