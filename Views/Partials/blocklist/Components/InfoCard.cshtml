@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ContentModels.InfoCard)Model.Content;
+}
+
+    <div class="aside-content">
+        <p>@content.InfoTitle</p>
+        <div class="aside-img-container">
+            <img src="@(content.InfoImage?.Url() ?? "~/images/fallback.svg")" alt="Image widget" />
+        </div>
+        <p>
+            @content.InfoText
+        </p>
+    </div>
+    <div class="mail-contact-card">
+        <h6>How can we help you?</h6>
+        <p>online support 24/7, we are here to help you</p>
+        <div class="input-group">
+            <img src="/imgs/Icon-mail.svg" alt="" />
+            <input type="email" placeholder="Email address" />
+        </div>
+    </div>

@@ -5,7 +5,15 @@
     var settings = Model.Settings as ContentModels.ServiceSettings;
 
     var sectionColor = settings?.ServiceBgColor?.Color ?? "#ffffff";
+
+    var current = Umbraco.AssignedContentItem;
+    var siteRoot = current?.Root();
+
+    var servicePage = siteRoot?.Children<ServicePage>()?.FirstOrDefault();
+    var items = servicePage?.Children<ServiceDetail>()?.OrderByDescending(x => x.CreateDate).ToList() ?? [];
 }
+
+
 
 <section class="our-service" style="background-color:@sectionColor">
     <div class="container">
@@ -19,72 +27,28 @@
                 <h2>@Html.Raw(content.ServiceTitle)</h2>
             </div>
             <div class="box-grid-6x2">
-                <a href="#" class="service-box">
-                    <h5>Risk Management</h5>
-                    <div class="service-box-img-container">
-                        <img src="imgs/Service-img-placeholder.svg" alt="" />
-                    </div>
-                    <p class="service-small-detail">
-                        Dolor in reprehenderit in voluptate velit esse cillum dolore
-                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non
-                    </p>
-                </a>
-                <a class="service-box">
-                    <h5>Risk Management</h5>
-                    <div class="service-box-img-container">
-                        <img src="imgs/Service-img-placeholder.svg" alt="" />
-                    </div>
-                    <p class="service-small-detail">
-                        Dolor in reprehenderit in voluptate velit esse cillum dolore
-                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non
-                    </p>
-                </a>
-                <a class="service-box">
-                    <h5>Risk Management</h5>
-                    <div class="service-box-img-container">
-                        <img src="imgs/Service-img-placeholder.svg" alt="" />
-                    </div>
-                    <p class="service-small-detail">
-                        Dolor in reprehenderit in voluptate velit esse cillum dolore
-                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non
-                    </p>
-                </a>
-                <a class="service-box">
-                    <h5>Risk Management</h5>
-                    <div class="service-box-img-container">
-                        <img src="imgs/Service-img-placeholder.svg" alt="" />
-                    </div>
-                    <p class="service-small-detail">
-                        Dolor in reprehenderit in voluptate velit esse cillum dolore
-                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non
-                    </p>
-                </a>
-                <a class="service-box">
-                    <h5>Risk Management</h5>
-                    <div class="service-box-img-container">
-                        <img src="imgs/Service-img-placeholder.svg" alt="" />
-                    </div>
-                    <p class="service-small-detail">
-                        Dolor in reprehenderit in voluptate velit esse cillum dolore
-                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non
-                    </p>
-                </a>
-                <a class="service-box">
-                    <h5>Risk Management</h5>
-                    <div class="service-box-img-container">
-                        <img src="imgs/Service-img-placeholder.svg" alt="" />
-                    </div>
-                    <p class="service-small-detail">
-                        Dolor in reprehenderit in voluptate velit esse cillum dolore
-                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                        non
-                    </p>
-                </a>
+
+                @if(items.Any())
+                {
+                    @foreach (var item in items)
+                    {   
+                        <a href="@item.Url()" class="service-box">
+                            <h5>@item.Name</h5>
+                            <div class="service-box-img-container">
+                                <img src="@(item.ServiceDetailThumbnail?.Url() ?? "~/images/fallback.svg")" alt="Thumbnail" />
+                            </div>
+                            <p class="service-small-detail">
+                                @item.ServiceDetailExcerpt
+                            </p>
+                        </a>
+                    }
+                }
+                else
+                {
+                    <p>No Services Avaliable</p>
+                }
+                
+                
             </div>
         </div>
     </div>
