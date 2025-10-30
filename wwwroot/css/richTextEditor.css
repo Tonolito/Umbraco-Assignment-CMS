@@ -1,0 +1,108 @@
+﻿/* ===========================
+   Onatrix RTE base styles
+   =========================== */
+
+/* Typografi */
+.rte-xl {
+    font-size: 70px;
+    line-height: 1.6;
+}
+
+.rte-lg {
+    font-size: 40px;
+    line-height: 1.6;
+}
+
+.rte-md {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.rte-xs {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.font-light {
+    font-weight: 300;
+}
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+/* Färgklasser (kopplade till ditt brand theme) */
+.text-primary {
+    color: #4F5955;
+}
+
+.text-secondary {
+    color: #D9C3A9;
+}
+
+.text-body-text {
+    color: #535656;
+}
+
+.text-body-text-100 {
+    color: #999;
+}
+
+/* Rubriker */
+h2, h3, h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Listor */
+.rte-ul {
+    list-style-type: disc;
+    list-style-position: inside; /* Gör att punkten ligger närmare texten */
+    color: #D9C3A9; /* Färgar punkterna */
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+}
+
+    .rte-ul li {
+        color: #D9C3A9; /* färg för bullet */
+        margin-bottom: 0.75rem;
+    }
+
+        .rte-ul li p {
+            display: inline; /* Gör att <p> inte bryter raden efter punkten */
+            color: #535656; /* Textfärg */
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .rte-ul li span[style*="white-space: pre-wrap;"] {
+            white-space: normal !important;
+        }
+
+
+
+/* Bilder inuti RTE */
+.umb-block-grid__content img,
+.umb-richtext img,
+.rte-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+}
+
+/* Avstånd mellan paragrafer */
+.umb-richtext p,
+.rte-content p {
+    margin-bottom: 1rem;
+}
+
+/* Återställ onödiga inline-styles från Umbraco */
+span[style*="white-space: pre-wrap;"] {
+    white-space: normal !important;
+}

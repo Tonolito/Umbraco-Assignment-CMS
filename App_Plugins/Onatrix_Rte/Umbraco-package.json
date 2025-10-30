@@ -1,0 +1,233 @@
+{
+  "name": "Onatrix Rte",
+  "alias": "Onatrix.Rte",
+  "extensions": [
+    {
+      "type": "tiptapToolbarExtension",
+      "kind": "styleMenu",
+      "alias": "Onatrix.Tiptap.StyleMenu",
+      "name": "Onatrix Tiptap Style Menu",
+      "meta": {
+        "alias": "OnatrixStyleMenu",
+        "icon": "icon-palette",
+        "label": "Onatrix styles"
+      },
+      "items": [
+        {
+          "label": "Paragraphs",
+          "items": [
+            {
+              "label": "XL - 70",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "rte-xl font-light"
+                  }
+                },
+                {
+                  "label": "Regular",
+                  "data": {
+                    "tag": "p",
+                    "class": "rte-xl font-regular"
+                  }
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "rte-xl font-bold"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "L - 40",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "rte-lg font-light"
+                  }
+                },
+                {
+                  "label": "Regular",
+                  "data": {
+                    "tag": "p",
+                    "class": "rte-lg font-regular"
+                  }
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "rte-lg font-bold"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "M - 20",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "rte-md font-light"
+                  }
+                },
+                {
+                  "label": "Regular",
+                  "data": {
+                    "tag": "p",
+                    "class": "rte-md font-regular"
+                  }
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "rte-md font-bold"
+                  }
+                }
+              ]
+            },
+            {
+              "label": "XS - 14",
+              "items": [
+                {
+                  "label": "Light",
+                  "data": {
+                    "tag": "p",
+                    "class": "rte-xs font-light"
+                  }
+                },
+                {
+                  "label": "Regular",
+                  "data": {
+                    "tag": "p",
+                    "class": "rte-xs font-regular"
+                  }
+                },
+                {
+                  "label": "Bold",
+                  "data": {
+                    "tag": "p",
+                    "class": "rte-xs font-bold"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Headings",
+          "items": [
+            {
+              "label": "Heading 2",
+              "data": {
+                "tag": "h2",
+                "class": ""
+              },
+              "appearance": {
+                "icon": "icon-heading-2"
+              }
+            },
+            {
+              "label": "Heading 3",
+              "data": {
+                "tag": "h3"
+              }
+            },
+            {
+              "label": "Heading 4",
+              "data": {
+                "tag": "h4"
+              }
+            }
+          ]
+        },
+        {
+          "label": "Bullets",
+          "items": [
+            {
+              "label": "Unordered List",
+              "data": {
+                "tag": "ul",
+                "class": "rte-ul"
+              },
+              "appearance": {
+                "icon": "icon-bulleted-list"
+              }
+            },
+            {
+              "label": "Ordered List",
+              "data": {
+                "tag": "ol",
+                "class": "rte-ol"
+              },
+              "appearance": {
+                "icon": "icon-ordered-list"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "tiptapToolbarExtension",
+      "kind": "styleMenu",
+      "alias": "Onatrix.Tiptap.BrandColors",
+      "name": "Onatrix Brand Colors Menu",
+      "meta": {
+        "alias": "OnatrixBrandColors",
+        "icon": "icon-palette",
+        "label": "Onatrix Color"
+      },
+      "items": [
+        {
+          "label": "Primary",
+          "data": {
+            "tag": "span",
+            "class": "text-primary"
+          },
+          "appearance": {
+            "style": "background-color: #4F5955; color:#fff; padding:5px;"
+          }
+        },
+        {
+          "label": "Secondary",
+          "data": {
+            "tag": "span",
+            "class": "text-secondary"
+          },
+          "appearance": {
+            "style": "background-color: #D9C3A9; color:#fff; padding:5px;"
+          }
+        },
+        {
+          "label": "Body",
+          "data": {
+            "tag": "span",
+            "class": "text-body-text"
+          },
+          "appearance": {
+            "style": "background-color: #535656; color:#fff; padding:5px;"
+          }
+        },
+        {
+          "label": "Body-Light",
+          "data": {
+            "tag": "span",
+            "class": "text-body-text-100"
+          },
+          "appearance": {
+            "style": "background-color: #999999; color:#fff; padding:5px;"
+          }
+        }
+      ]
+    }
+  ]
+}
