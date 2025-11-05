@@ -1,3 +1,5 @@
+using Umbraco_Assignment_CMS.Services;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
@@ -6,6 +8,7 @@ builder.CreateUmbracoBuilder()
     .AddComposers()
     .Build();
 
+builder.Services.AddScoped<FormSubmissonsService>();
 WebApplication app = builder.Build();
 
 await app.BootUmbracoAsync();
