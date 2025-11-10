@@ -1,0 +1,34 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.StoriesSection)Model.Content;
+    var storyList = content.StoryList;
+
+    var storyBgImage = content.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("storyBgImage");
+    var imageUrl = storyBgImage?.Url();
+}
+
+
+
+<section class="stories" style="background-image: url('@imageUrl');">
+    <div class="container">
+        <div class="stories-content">
+            <div class="section-title">
+                <p class="section-name">SUCCESS STORIES</p>
+                <h2>Success story</h2>
+            </div>
+            <div class="grid-box-3x1">
+                @if(storyList != null)
+                {
+                    @foreach (var story in storyList)
+                    {
+                        <partial name="~/Views/Partials/blocklist/Components/StoryItem.cshtml" model="story" />
+                    }
+                }     
+            </div>
+            <div class="story-img-container">
+                <img src="@content.StoryImage.Url()" alt="" />
+            </div>
+        </div>
+    </div>
+</section>

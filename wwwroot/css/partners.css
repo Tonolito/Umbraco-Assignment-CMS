@@ -1,0 +1,33 @@
+﻿.partners {
+    margin-top: 5.75rem;
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 1400px) {
+    .partners {
+        /* margin-top: 15rem; */
+    }
+}
+
+.partners-content {
+}
+
+.brands-container {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .brands-container {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media (min-width: 1400px) {
+    .brands-container {
+        grid-template-columns: auto auto auto auto auto auto;
+        justify-content: space-between;
+    }
+}

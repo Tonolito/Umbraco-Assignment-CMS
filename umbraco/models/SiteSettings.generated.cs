@@ -74,6 +74,22 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string ContactPhone => this.Value<string>(_publishedValueFallback, "contactPhone");
 
 		///<summary>
+		/// Footer Credits
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("footerCredits")]
+		public virtual string FooterCredits => this.Value<string>(_publishedValueFallback, "footerCredits");
+
+		///<summary>
+		/// Footer Rights
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("footerRights")]
+		public virtual string FooterRights => this.Value<string>(_publishedValueFallback, "footerRights");
+
+		///<summary>
 		/// Site Logo
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "16.2.0+4eae48e")]

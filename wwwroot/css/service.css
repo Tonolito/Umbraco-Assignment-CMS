@@ -12,13 +12,17 @@
     grid-template-columns: 1fr;
     padding-top: 2rem;
     gap: 2rem;
+}
 
-    @media (min-width: 768px) {
+@media (min-width: 768px) {
+    .box-grid-6x2 {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
     }
+}
 
-    @media (min-width: 1400px) {
+@media (min-width: 1400px) {
+    .box-grid-6x2 {
         grid-template-columns: auto auto auto;
         grid-template-rows: auto auto;
         gap: 2rem;
@@ -30,25 +34,20 @@
     flex-direction: column;
     width: 100%;
     border: solid 1px grey;
-    h5
-
-{
-    padding: 1.5rem;
 }
 
-@media (min-width: 768px) {
-}
+    .service-box h5 {
+        padding: 1.5rem;
+    }
 
-img {
-    width: 100%;
-    height: auto;
-}
+    .service-box img {
+        width: 100%;
+        height: auto;
+    }
 
-.service-small-detail {
-    padding: 1.75rem;
-}
-
-}
+    .service-box .service-small-detail {
+        padding: 1.75rem;
+    }
 
 .pagination {
     margin-top: 20px;
