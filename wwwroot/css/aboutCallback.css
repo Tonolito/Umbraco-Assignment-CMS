@@ -80,14 +80,16 @@
     gap: 1.25rem;
     border-radius: 4px;
 }
-
-/* Inputfält */
-.input-group input,
-.input-group select {
-    padding: 1rem;
-    width: 100%;
-    border: 1px solid rgb(231, 231, 231);
-    border-radius: 4px;
+    /* Inputfält */
+    .input-group input,
+    .input-group select {
+        padding: 1rem;
+        width: 100%;
+        border: 1px solid rgb(231, 231, 231);
+        border-radius: 4px;
+    }
+.input-group label {
+    display: none;
 }
 
 /* Valideringsstilar */

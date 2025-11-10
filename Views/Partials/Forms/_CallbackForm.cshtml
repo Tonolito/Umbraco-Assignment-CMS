@@ -6,25 +6,21 @@
     <div class="contact-form">
 
         <div class="input-group">
-            <label asp-for="Name"></label>
             <input asp-for="Name" type="text" placeholder="@Html.DisplayNameFor(x => x.Name)" />
             <span asp-validation-for="Name"></span>
         </div>
 
         <div class="input-group">
-            <label asp-for="Email"></label>
             <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" />
             <span asp-validation-for="Email"></span>
         </div>
 
         <div class="input-group">
-            <label asp-for="Phone"></label>
             <input asp-for="Phone" type="text" placeholder="@Html.DisplayNameFor(x => x.Phone)" />
             <span asp-validation-for="Phone"></span>
         </div>
 
         <div class="input-group">
-            <label asp-for="SelectedOption"></label>
             <div>
                 <select asp-for="SelectedOption">
                     <option value="" disabled hidden selected>Select an Option</option>

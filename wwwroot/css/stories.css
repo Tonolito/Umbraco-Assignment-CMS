@@ -1,0 +1,73 @@
+﻿.stories {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .stories {
+        display: block;
+        background-image: url(imgs/Success-story-bg.svg);
+        background-position: center;
+        min-height: 838px;
+        padding-top: 6.25rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .stories {
+        margin-bottom: 12rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .stories {
+        margin-bottom: 17rem;
+    }
+}
+
+.stories-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+    .stories-content h2 {
+        color: white;
+    }
+
+.grid-box-3x1 {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.story-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+    .story-box p {
+        color: white;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+.story-nr {
+    font-size: 100px;
+    color: #d9c3a9;
+    font-weight: 600;
+}
+
+.story-img-container {
+    position: relative;
+    bottom: -174px;
+    display: flex;
+    justify-content: center;
+}
+
+    .story-img-container img {
+        width: 100%;
+    }

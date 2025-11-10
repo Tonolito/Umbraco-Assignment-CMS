@@ -1,0 +1,48 @@
+﻿.about {
+    margin-top: 6.75rem;
+    margin-bottom:8rem;
+}
+
+    .about .container {
+        display: flex;
+        justify-content: center;
+        gap: 3.25rem;
+        flex-wrap: wrap;
+    }
+
+@media (min-width: 768px) {
+    .about .container {
+        flex-wrap: nowrap;
+    }
+}
+
+.about-img-container {
+    text-align: center;
+}
+
+    .about-img-container img {
+        height: auto;
+        width: 100%;
+    }
+
+@media (min-width: 768px) {
+    .about-img-container img {
+        width: unset;
+        max-width: 18.5em;
+    }
+}
+
+@media (min-width: 1400px) {
+    .about-img-container img {
+        width: unset;
+        max-width: 25em;
+    }
+}
+
+.about-content .quote {
+    margin-bottom: 2rem;
+}
+
+.about-content p {
+    margin-bottom: 1.5rem;
+}

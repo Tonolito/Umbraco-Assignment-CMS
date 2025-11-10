@@ -1,0 +1,36 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco_Assignment_CMS.ViewModels
+
+@{
+    var content = (ContentModels.MapSection)Model.Content;
+    var mapBgImage = content.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("mapBgImage");
+    var imageUrl = mapBgImage?.Url();
+    var settings = Model.Settings as ContentModels.MapSettings;
+
+
+   
+
+    var formVM = new CallbackFormViewModel
+    {
+        Options = settings?.MapSetting ?? []
+    };
+}
+
+<section class="map-section" style="background-image: url('@imageUrl');">
+    <div class="container">
+        <div class="map-card">
+            <div class="section-title">
+                <p class="section-name">@content.MapLabel</p>
+                <h2>@content.MapTitle</h2>
+                <p class="extra">
+                    @content.MapDescription
+                </p>
+            </div>
+
+            <div class="map-form-container">
+                <partial name="Partials/Forms/_CallbackFormMap" model="formVM" />
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,20 +1,18 @@
 ﻿.our-team {
     padding-top: 3.25rem;
     padding-bottom: 5.25rem;
-    .container
-
-{
-    display: flex;
-    flex-direction: column;
 }
 
-.title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    .our-team .container {
+        display: flex;
+        flex-direction: column;
+    }
 
-}
+    .our-team .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
 .team-cards {
     display: flex;
@@ -25,25 +23,21 @@
 /* Alla kort får padding och border */
 .expert-card {
     border: 1px solid #eaeaea;
-    flex: 1 1 100%; /* default full width på små skärmar */
+    flex: 1 1 100%;
 }
 
 /* Exakt 3 kort på första raden, 4 kort på andra raden */
 @media (min-width: 768px) {
     /* Första 3 korten */
     .expert-card:nth-child(-n+3) {
-        flex: 1 1 calc((100% - 2rem) / 3); /* 3 kolumner med gap 1rem */
+        flex: 1 1 calc((100% - 2rem) / 3);
     }
 
     /* Nästa 4 korten */
     .expert-card:nth-child(n+4):nth-child(-n+7) {
-        flex: 1 1 calc((100% - 3rem) / 4); /* 4 kolumner med gap 1rem */
+        flex: 1 1 calc((100% - 3rem) / 4);
     }
 }
-
-/* Kort 7 och framåt kan du hantera separat om du vill */
-
-
 
 .card-img-container img {
     width: 100%;
