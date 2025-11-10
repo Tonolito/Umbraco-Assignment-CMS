@@ -1,0 +1,21 @@
+﻿@using Umbraco_Assignment_CMS.ViewModels
+@model QuestionFormViewmodel
+@using (Html.BeginUmbracoForm("HandleQuestionForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "questionForm" }))
+{
+    <div class="input-group name">
+        <input asp-for="Name" type="text" placeholder="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="input-group email">
+        <input asp-for="Email" type="email" placeholder="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="input-group question-input">
+        <textarea asp-for="Question" placeholder="Question"></textarea>
+        <span asp-validation-for="Question"></span>
+
+    </div>
+    <div class="btn-container">
+        <button type="submit" class="btn">Submit</button>
+    </div>
+}

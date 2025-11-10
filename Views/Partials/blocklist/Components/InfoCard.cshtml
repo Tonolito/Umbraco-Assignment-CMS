@@ -1,8 +1,12 @@
 ﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco_Assignment_CMS.ViewModels
 
 @{
     var content = (ContentModels.InfoCard)Model.Content;
+    var formVM = new EmailFormViewModel
+    {
+    };
 }
 
     <div class="aside-content">
@@ -17,8 +21,17 @@
     <div class="mail-contact-card">
         <h6>How can we help you?</h6>
         <p>online support 24/7, we are here to help you</p>
-        <div class="input-group">
-            <img src="/imgs/Icon-mail.svg" alt="" />
-            <input type="email" placeholder="Email address" />
+    <partial name="Partials/Forms/_EmailForm" model="formVM" />
+    @if (TempData["FormSuccess"] != null)
+    {
+        <div class="form-success">
+            @TempData["FormSuccess"]
         </div>
+    }
+    else if (TempData["FormError"] != null)
+    {
+        <div class="form-error">
+            @TempData["FormError"]
+        </div>
+    }
     </div>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using System.ComponentModel.DataAnnotations;
 
 namespace Umbraco_Assignment_CMS.ViewModels;
@@ -27,7 +28,7 @@ public class CallbackFormViewModel
 
     public string SelectedOption { get; set; } = null!;
 
-    [BindNever]
+    [ValidateNever]
     public IEnumerable<string> Options { get; set; } = null!;
 
 }
