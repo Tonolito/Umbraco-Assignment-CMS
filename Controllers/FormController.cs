@@ -15,7 +15,7 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
 {
     private readonly FormSubmissonsService _formSubmissonsService = formSubmissonsService;
 
-    public IActionResult HandleCallbackFOrm(CallbackFormViewModel model)
+    public IActionResult HandleCallbackForm(CallbackFormViewModel model)
     {
         if (!ModelState.IsValid)
         {
@@ -32,6 +32,45 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
 
         // FormSuccess
         TempData["FormSuccess"] = "Thank you! Your Request have been noted. Thank you!";
+        return RedirectToCurrentUmbracoPage();
+    }
+    public IActionResult HandleQuestionForm(QuestionFormViewmodel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return CurrentUmbracoPage();
+        }
+        var result = _formSubmissonsService.SaveQuestionRequest(model);
+
+        if (!result)
+        {
+            // FormError
+            TempData["FormError"] = "Something went wrong while submitting you request. Please try again later.";
+            return RedirectToCurrentUmbracoPage();
+        }
+
+        // FormSuccess
+        TempData["FormSuccess"] = "Thank you! Your Request have been noted. Thank you!";
+        return RedirectToCurrentUmbracoPage();
+    }
+
+    public IActionResult HandleEmailForm(EmailFormViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return CurrentUmbracoPage();
+        }
+        var result = _formSubmissonsService.SaveEmailRequest(model);
+
+        if (!result)
+        {
+            // FormError
+            TempData["FormError"] = "Something went wrong while submitting you request. Please try again later.";
+            return RedirectToCurrentUmbracoPage();
+        }
+
+        // FormSuccess
+        TempData["FormSuccess"] = "Your Request have been noted. Thank you!";
         return RedirectToCurrentUmbracoPage();
     }
 }
