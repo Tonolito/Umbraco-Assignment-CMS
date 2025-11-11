@@ -21,27 +21,36 @@ aside {
 }
 
 .aside-content {
+    display:flex;
+    flex-direction:column;
+    gap:1.25rem;
 }
+
+
 
 .aside-img-container img {
     width: 100%;
 }
 
 .mail-contact-card {
-    background-color: #4f5955;
     border-radius: 0.5rem;
     padding: 1.25rem;
+    background-size:cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    margin-top: 1.25rem;
 }
 
     .mail-contact-card p {
         color: white;
         padding-bottom: 2rem;
+        padding-top: 0.75rem;
     }
 
     .mail-contact-card h6 {
         color: bisque;
     }
-
+    
     .mail-contact-card .input-group {
         position: relative;
     }

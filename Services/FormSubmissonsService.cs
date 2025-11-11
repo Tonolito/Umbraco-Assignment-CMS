@@ -75,11 +75,11 @@ public class FormSubmissonsService(IContentService contentService)
                 return false;
             }
 
-            var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} -  {model.Email}";
+            var requestName = $"{DateTime.Now:yyyy-MM-dd HH:mm} -  {model.ContactEmail}";
             var request = _contentService.Create(requestName, container, "emailRequest");
 
 
-            request.SetValue("emailRequestEmail", model.Email);
+            request.SetValue("emailRequestEmail", model.ContactEmail);
 
             var saveResult = _contentService.Save(request);
 

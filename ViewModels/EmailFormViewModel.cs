@@ -10,5 +10,5 @@ public class EmailFormViewModel
     [RegularExpression(
     @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$",
     ErrorMessage = "Not a valid email address")]
-    public string Email { get; set; } = null!;
+    public string ContactEmail { get; set; } = null!;
 }

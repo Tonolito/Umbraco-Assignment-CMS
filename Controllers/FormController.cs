@@ -65,12 +65,12 @@ public class FormController(IUmbracoContextAccessor umbracoContextAccessor, IUmb
         if (!result)
         {
             // FormError
-            TempData["FormError"] = "Something went wrong while submitting you request. Please try again later.";
+            TempData["EmailFormError"] = "Something went wrong while submitting you request. Please try again later.";
             return RedirectToCurrentUmbracoPage();
         }
 
         // FormSuccess
-        TempData["FormSuccess"] = "Your Request have been noted. Thank you!";
+        TempData["EmailFormSuccess"] = "Your Request have been noted. Thank you!";
         return RedirectToCurrentUmbracoPage();
     }
 }
