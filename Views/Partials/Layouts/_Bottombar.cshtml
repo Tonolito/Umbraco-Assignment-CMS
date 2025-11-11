@@ -33,9 +33,12 @@
         <nav>
             @if (logo != null)
             {
-                <a href="/" class="nav-img-container">
-                    <img src="@logo.Url()" alt="Onatrix" />
-                </a>
+                <div>
+                    <a href="/" class="nav-img-container">
+                        <img src="@logo.Url()" alt="Onatrix" />
+                    </a>
+                </div>
+                
             }
             else
             {
@@ -56,14 +59,37 @@
 
             <div class="hamburger-menu"><i class="fa-solid fa-bars"></i></div>
 
-            <div class="serch-icon">
+            <div class="serch-icon" popovertar>
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <div class="mobile-menu">
-                <a href="/about">About</a>                                
-                <a href="/services">Services</a>
-                <a href="/contact">Contact</a>
+                @foreach (var item in selection)
+                {
+                    <a class="@(item.IsAncestorOrSelf(Model) ? "current" : null)"
+                       href="@item.Url(PublishedUrlProvider)">
+                        @item.Name
+                    </a>
+                }
             </div>
         </nav>
     </div>
 </div>
+
+
+@* Hjälp av ChatGpt-5 *@
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const hamburger = document.querySelector(".hamburger-menu");
+        const mobileMenu = document.querySelector(".mobile-menu");
+
+        if (hamburger && mobileMenu) {
+
+            hamburger.addEventListener("click", function () {
+                mobileMenu.classList.toggle("open");
+            });
+        } else {
+        }
+    });
+
+</script>

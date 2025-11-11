@@ -9,8 +9,16 @@
 
 .section-title {
     margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    
 }
 
+.section-title h2{
+    max-width:37rem;
+    text-align: center;
+}
 .breadcrumb {
     display: flex;
     align-items: center;

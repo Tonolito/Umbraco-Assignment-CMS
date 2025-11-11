@@ -133,7 +133,9 @@ header .top-bar {
         justify-content: space-between;
         align-items: center;
     }
-
+    header .top-bar .socials {
+        display:flex;
+    }
     header .top-bar .socials .fa-brands {
         color: white;
         padding: 1rem 0rem;
@@ -147,6 +149,10 @@ header .top-bar {
         border-right: 1px solid #656e6a;
         padding: 0rem 0.5rem;
     }
+        header .top-bar .socials .first-social-item {
+            border-left: 1px solid #656e6a;
+            
+        }
 
     header .top-bar p {
         color: white;
@@ -214,6 +220,13 @@ nav {
         text-decoration: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     }
+        .mobile-menu a:hover{
+            background-color: var(--sub-color3);
+        }
+        .mobile-menu.open {
+            display: flex; /* visas när klassen "open" finns */
+        }
+
 
 /* NAVBAR */
 

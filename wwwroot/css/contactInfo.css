@@ -61,6 +61,15 @@
     grid-area: content;
 }
 
+.email-group {
+    padding: 1rem;
+}
+@media(min-width:1400px)
+{
+    .email-group {
+        padding:0rem;
+    }
+}
 
 
 
