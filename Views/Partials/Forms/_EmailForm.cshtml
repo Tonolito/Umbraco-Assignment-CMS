@@ -1,0 +1,13 @@
+﻿@using Umbraco_Assignment_CMS.ViewModels
+@model EmailFormViewModel
+
+@using (Html.BeginUmbracoForm("HandleEmailForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "emailForm" }))
+{
+    <div class="input-group">
+        <img src="/imgs/Icon-mail.svg" alt="" />
+        <input asp-for="ContactEmail" type="email" placeholder="Email address" />
+        <span asp-validation-for="ContactEmail"></span>
+
+    </div>
+}
+

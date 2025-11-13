@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ContentModels.PartnerItem)Model.Content;
+}
+
+<div class="brands-box">
+    <img src="@content.PartnerImage.Url()" alt="No Image found" />
+</div>

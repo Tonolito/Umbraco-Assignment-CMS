@@ -1,0 +1,39 @@
+﻿@using Umbraco_Assignment_CMS.ViewModels
+@model CallbackFormViewModel
+
+@using (Html.BeginUmbracoForm("HandleCallbackForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "callbackForm" }))
+{
+    <div class="contact-form">
+
+        <div class="input-group">
+            <input asp-for="Name" type="text" placeholder="@Html.DisplayNameFor(x => x.Name)" />
+            <span asp-validation-for="Name"></span>
+        </div>
+
+        <div class="input-group">
+            <input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" />
+            <span asp-validation-for="Email"></span>
+        </div>
+
+        <div class="input-group">
+            <input asp-for="Phone" type="text" placeholder="@Html.DisplayNameFor(x => x.Phone)" />
+            <span asp-validation-for="Phone"></span>
+        </div>
+
+        <div class="input-group">
+            <div>
+                <select asp-for="SelectedOption">
+                    <option value="" disabled hidden selected>Select an Option</option>
+
+                    @foreach (var o in Model.Options)
+                    {
+                        <option value="@o">@o</option>
+                    }
+                </select>
+            </div>
+            <span asp-validation-for="SelectedOption"></span>
+        </div>
+
+        <button class="btn" type="submit">Submit</button>
+    </div>
+}

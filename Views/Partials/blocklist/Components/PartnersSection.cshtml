@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.PartnersSection)Model.Content;
+    var partnerList = content.PartnerList;
+}
+
+<section class="partners">
+    <div class="container">
+        <div class="partners-content">
+            <div class="brands-container">
+
+                @if (partnerList != null)
+                {
+                    @foreach (var partner in partnerList)
+                    {
+                        <partial name="~/Views/Partials/blocklist/Components/PartnerItem.cshtml" model="partner" />
+
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,55 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+
+    Layout = null;
+
+    var rootContent = Umbraco.ContentAtRoot();
+
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+
+    var siteName = siteSettings?.SiteName ?? "Onatrix";
+
+    var title = Model.Level == 1 ? $"{siteName}" : $"{siteName} | {Model.Name}";
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link href="/css/main.css" rel="stylesheet" />
+    <link href="/css/service.css" rel="stylesheet" />
+    <link href="/css/team.css" rel="stylesheet" />
+    <link href="/css/hero.css" rel="stylesheet" />
+    <link href="/css/breadcrumb.css" rel="stylesheet" />
+    <link href="/css/serviceDetails.css" rel="stylesheet" />
+    <link href="/css/richTextEditor.css" rel="stylesheet" />
+    <link href="/css/aboutCallback.css" rel="stylesheet" />
+    <link href="/css/chooseUs.css" rel="stylesheet" />
+    <link href="/css/stories.css" rel="stylesheet" />
+    <link href="/css/partners.css" rel="stylesheet" />
+    <link href="/css/map.css" rel="stylesheet" />
+    <link href="/css/contactInfo.css" rel="stylesheet" />
+    <link href="/css/about.css" rel="stylesheet" />
+    <link href="/css/testimonial.css" rel="stylesheet" />
+    <link href="/css/question.css" rel="stylesheet" />
+
+
+
+
+</head>
+<body>
+    <header>
+        <partial name="Partials/Layouts/_TopBar" />
+        <partial name="Partials/Layouts/_BottomBar" />
+    </header>
+    @RenderBody()
+
+    <partial name="Partials/Layouts/_Footer" />
+
+    <script src="~/js/Form.js"></script>
+</body>
+</html>

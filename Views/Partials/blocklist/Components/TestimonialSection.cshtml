@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@{
+    var content = (ContentModels.TestimonialSection)Model.Content;
+}
+
+
+<section class="testimonial">
+          <div class="container">
+            <div class="testimonial-content">
+              <div class="section-title">
+                <p class="section-name">GREAT REVIEWS FOR OUR SERVICES</p>
+                <h2>@content.TestimonialTitle</h2>
+              </div>
+              <div class="testimonial-text">
+                <p>
+                  @content.TestimonialText
+                </p>
+              </div>
+              <div class="testimonial-rating">
+                <img src="@content.TestimonialStars?.Url()" alt="Rating" />
+              </div>
+              <div class="testimonial-author">
+                <p class="fullname">@content.TestimonialFullname</p>
+                <p class="company">@content.TestimonialCompany</p>
+              </div>
+            </div>
+            <div class="testimonial-img">
+              <img src="@content.TestimonialImage?.Url()" alt="Picture of reviewer" />
+            </div>
+          </div>
+        </section>

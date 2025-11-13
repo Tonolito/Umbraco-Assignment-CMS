@@ -1,0 +1,45 @@
+﻿.questions {
+    margin-bottom:4.75rem;
+}
+
+.question-form-container form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "name email"
+        "question question";
+    gap: 1.5rem;
+}
+
+.question-title {
+    margin-bottom: 1.25rem;
+}
+.input-group{
+    display: flex;
+    flex-direction:column;
+}
+
+.input-group input,
+.input-group textarea {
+    padding: 0.9rem 1rem;
+    resize: none;
+    width: 100%;
+    border: 1px solid #c9c9c9;
+    border-radius: 0.5rem;
+}
+
+.input-group.name {
+    grid-area: name;
+}
+
+.input-group.email {
+    grid-area: email;
+}
+
+.question-input {
+    grid-area: question;
+}
+
+    .question-input textarea {
+        min-height: 11rem;
+    }

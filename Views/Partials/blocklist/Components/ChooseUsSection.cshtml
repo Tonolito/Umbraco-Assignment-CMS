@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ChooseUsSection)Model.Content;
+}
+
+
+<section class="choose-us">
+          <div class="container">
+            <div class="choose-us-content">
+              <div class="section-title">
+                <h2>@content.ChooseUsTitle <br /><span>@content.ChooseUsClientsNumber</span></h2>
+              </div>
+              <p>
+                @content.ChooseUsDescription
+              </p>
+                <button class="btn">@content.ChooseUsButton</button>
+              <div class="choose-us-img-container">
+                <img src="@content.ChooseUsImage.Url()" alt="" />
+              </div>
+            </div>
+          </div>
+        </section>

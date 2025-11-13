@@ -1,3 +1,6 @@
+using Azure.Communication.Email;
+using Umbraco_Assignment_CMS.Services;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
@@ -5,6 +8,10 @@ builder.CreateUmbracoBuilder()
     .AddWebsite()
     .AddComposers()
     .Build();
+
+builder.Services.AddSingleton(x => new EmailClient(builder.Configuration["ACS:ConnectionString"]));
+builder.Services.AddScoped<FormSubmissonsService>();
+builder.Services.AddScoped<EmailService>();
 
 WebApplication app = builder.Build();
 

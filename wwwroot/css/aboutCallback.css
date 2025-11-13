@@ -1,0 +1,114 @@
+﻿.about-us {
+    position: relative;
+    padding: 6rem 0rem;
+}
+
+/* Grid-layout mellan text och form */
+.flex-2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .flex-2 {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+}
+
+/* Textdelen */
+.about-us-content {
+}
+
+@media (min-width: 768px) {
+    .about-us-content {
+        max-width: 18.75em;
+    }
+}
+@media (min-width: 1400px) {
+    .about-us-content {
+        max-width: 49rem;
+    }
+}
+
+
+/* Formdelen */
+.contact-form-container {
+    max-width: 470px;
+    width: 100%;
+    margin-top: 2rem;
+    box-shadow: 8px 8px 40px -8px black;
+    background-color:white;
+}
+
+@media (min-width: 768px) {
+    .contact-form-container {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 1400px) {
+    .contact-form-container {
+        margin-top: -11.5rem;
+    }
+}
+
+/* Formrubrik */
+.form-title {
+    background-color: #4f5955;
+    padding: 1rem 1rem 1rem 2rem;
+    color: white;
+}
+
+/* Beskrivningstext under rubrik */
+.contact-form-container > p {
+    margin: 1rem 0;
+    font-size: 14px;
+    color: #535656;
+    padding: 0rem 2rem;
+}
+
+/* Formulär */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.25rem;
+    border-radius: 4px;
+}
+    /* Inputfält */
+    .input-group input,
+    .input-group select {
+        padding: 1rem;
+        width: 100%;
+        border: 1px solid rgb(231, 231, 231);
+        border-radius: 4px;
+    }
+.input-group label {
+    display: none;
+}
+
+/* Valideringsstilar */
+form .input-validation-error {
+    border-color: #ef4444;
+    outline: none;
+    box-shadow: 0 0 0 1px #ef4444;
+}
+
+    form .input-validation-error:focus {
+        border-color: #ef4444;
+        box-shadow: 0 0 0 2px #ef4444;
+    }
+
+form .field-validation-error {
+    margin-top: 0.25rem;
+    display: block;
+    font-size: 0.875rem;
+    color: #dc2626;
+}
+
+

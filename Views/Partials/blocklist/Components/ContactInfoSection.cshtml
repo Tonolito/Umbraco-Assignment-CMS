@@ -1,0 +1,50 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ContactInfoSection)Model.Content;
+    var settings = Model.Settings as ContentModels.ContactInfoSettings;
+
+    var sectionColor = settings?.BgColor?.Color ?? "#ffffff";
+
+    var rootContent = Umbraco.ContentAtRoot();
+
+    var siteSettings = rootContent.OfType<SiteSettings>().FirstOrDefault();
+}
+
+<section class="contact-info" style="background-color:@sectionColor">
+    <div class="container">
+        <div class="contact-info-img">
+            <img src="@content.ContactInfoImage.Url()" alt="Happy employ" />
+        </div>
+        <div class="contact-info-content">
+            <h2>@content.ContactInfoTitle</h2>
+            <div class="info-group">
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="info-title">
+                    <p>Office location</p>
+                </div>
+                <div class="info-content">
+                    <p>@siteSettings?.ContactAddress</p>
+                </div>
+            </div>
+            <div class="info-group">
+                <i class="fa-solid fa-phone-flip"></i>
+                <div class="info-title">
+                    <p>Phone number</p>
+                </div>
+                <div class="info-content">
+                    <p>@siteSettings?.ContactPhone</p>
+                </div>
+            </div>
+            <div class="info-group email-group">
+                <i class="fa-regular fa-envelope"></i>
+                <div class="info-title">
+                    <p>E-mail address</p>
+                </div>
+                <div class="info-content">
+                    <p>@siteSettings?.ContactEmail</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

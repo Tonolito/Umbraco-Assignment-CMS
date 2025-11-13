@@ -1,0 +1,34 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@{
+    var content = (ContentModels.TeamSection)Model.Content;
+    var teamList = content.TeamMemberList;
+}
+<section class="our-team">
+    <div class="container">
+        <div class="section-title">
+            <p class="section-name">@content.TeamLabel</p>
+            <h2>@Html.Raw(content.TeamTitle)</h2>
+        </div>
+
+        <div class="team-cards">
+            @if (teamList != null)
+            {
+                for (var i = 0; i < teamList.Count; i++)
+                {
+                    var member = teamList[i];
+                    <div class="expert-card">
+                        <partial name="Partials/BlockList/Components/TeamMember" model="member" />
+                    </div>
+                }
+            }
+        </div>
+        <div class="pagination-team">
+            <button class="prev-btn">Prev</button>
+            <span class="page-info"></span>
+            <button class="next-btn">Next</button>
+        </div>
+
+    </div>
+</section>
+<script src="~/js/team-paginering.js"></script>

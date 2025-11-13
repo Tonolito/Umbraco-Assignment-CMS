@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+    var content = (ContentModels.StoryItem)Model.Content;
+}
+
+<div class="story-box">
+    <span class="story-nr">@content.StoryNumber</span>
+    <p>@content.StoryInfo</p>
+</div>

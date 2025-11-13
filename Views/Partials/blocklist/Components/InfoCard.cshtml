@@ -1,0 +1,40 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco_Assignment_CMS.ViewModels
+
+@{
+    var content = (ContentModels.InfoCard)Model.Content;
+    var cardBgImage = content.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("infoFormBg");
+    var imageUrl = cardBgImage?.Url();
+
+    var formVM = new EmailFormViewModel
+    {
+    };
+}
+
+    <div class="aside-content">
+        <h5 class="widget-title">@content.InfoTitle</h5>
+        <div class="aside-img-container">
+            <img src="@(content.InfoImage?.Url() ?? "~/images/fallback.svg")" alt="Image widget" />
+        </div>
+        <p>
+            @content.InfoText
+        </p>
+    </div>
+<div class="mail-contact-card" style="background-image: url('@imageUrl');">
+        <h6>@content.InfoFormTitle</h6>
+    <p>@content.InfoFormQuestion</p>
+    <partial name="Partials/Forms/_EmailForm" model="formVM" />
+    @if (TempData["EmailFormSuccess"] != null)
+    {
+        <div class="form-success">
+            @TempData["EmailFormSuccess"]
+        </div>
+    }
+    else if (TempData["EmailFormError"] != null)
+    {
+        <div class="form-error">
+            @TempData["EmailFormError"]
+        </div>
+    }
+    </div>

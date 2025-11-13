@@ -1,0 +1,44 @@
+﻿.breadcrumb-section {
+    background-image: url(/imgs/breadcrumb-bg.svg);
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4.75rem;
+}
+
+.section-title {
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    
+}
+
+.section-title h2{
+    max-width:37rem;
+    text-align: center;
+}
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 4.75rem;
+
+    li{
+          list-style: none;
+          
+      }
+
+}
+
+li a {
+    color: #4F5955;
+}
+
+li i {
+    color: #535656;
+}
+.active p{
+    color: #d9c3a9;
+}

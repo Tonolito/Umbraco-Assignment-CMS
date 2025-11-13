@@ -1,0 +1,33 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco_Assignment_CMS.ViewModels
+
+@{
+    var content = (ContentModels.QuestionSection)Model.Content;
+    var formVM = new QuestionFormViewmodel
+    {
+    };
+    
+}
+<section class="questions">
+    <div class="container">
+        <div class="question-title">
+            <h4>Have a question ?</h4>
+        </div>
+        <div class="question-form-container">
+            <partial name="Partials/Forms/_QuestionForm" model="formVM"/>
+            @if (TempData["FormSuccess"] != null)
+            {
+                <div class="form-success">
+                    @TempData["FormSuccess"]
+                </div>
+            }
+            else if (TempData["FormError"] != null)
+            {
+                <div class="form-error">
+                    @TempData["FormError"]
+                </div>
+            }
+        </div>
+    </div>
+</section>

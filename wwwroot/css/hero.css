@@ -1,0 +1,40 @@
+﻿.hero {
+    background-image: url("/imgs/sl-home2.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 6.25rem 0;
+}
+
+/* Hero content */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    /* h1 inuti hero-content */
+    .hero-content h1 {
+        text-align: center;
+    }
+
+    /* Hero-text inuti hero-content */
+    .hero-content .hero-text {
+        margin: 2rem 0rem;
+        max-width: 500px;
+    }
+
+/* Responsiva ändringar */
+@media (min-width: 768px) {
+    /* Du hade inget innehåll här men blocket finns om du vill lägga till något senare */
+}
+
+@media (min-width: 1400px) {
+    .hero-content {
+        max-width: 38rem;
+        align-items: flex-start;
+    }
+
+        .hero-content h1 {
+            text-align: start;
+        }
+}
