@@ -30,6 +30,18 @@
 
             <div class="map-form-container">
                 <partial name="Partials/Forms/_CallbackFormMap" model="formVM" />
+                @if (TempData["FormSuccess"] != null)
+                {
+                    <div class="form-success">
+                        @TempData["FormSuccess"]
+                    </div>
+                }
+                else if (TempData["FormError"] != null)
+                {
+                    <div class="form-error">
+                        @TempData["FormError"]
+                    </div>
+                }
             </div>
         </div>
     </div>
